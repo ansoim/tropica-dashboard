@@ -1,0 +1,61 @@
+{
+  "updatedAt": "2026-10-28T14:27:27Z",
+  "values": [
+    [
+      "Salesperson",
+      "Entries",
+      "Open / Planned / In progress",
+      "Awaiting feedback",
+      "Sale closed / Done",
+      "Sales value (CFA)"
+    ],
+    [
+      "KOFI",
+      20,
+      9,
+      3,
+      4,
+      22350000
+    ],
+    [
+      "DEEPAK",
+      3,
+      3,
+      0,
+      3,
+      27332500
+    ],
+    [
+      "AANJH",
+      42,
+      22,
+      8,
+      7,
+      1990000
+    ],
+    [
+      "MANISH",
+      7,
+      4,
+      0,
+      3,
+      4440000
+    ],
+    [
+      "Orders till now",
+      null,
+      null,
+      11,
+      17,
+      56112500
+    ],
+    [
+      "Target Of this Month",
+      null,
+      null,
+      null,
+      null,
+      70000000
+    ]
+  ]
+}
