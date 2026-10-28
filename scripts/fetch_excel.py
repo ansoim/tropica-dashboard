@@ -15,7 +15,7 @@ from openpyxl import load_workbook
 
 SHARE_URL = (
     "https://ansoim-my.sharepoint.com/:x:/p/abhishek_kumar/"
-    "IQDq2wrkfrleRa0HdJ3RCWAUAS8UuAWbIxp4n8CXHA6J4o4?e=E83P9V"
+    "IQDq2wrkfrleRa0HdJ3RCWAUAS8UuAWbIxp4n8CXHA6J4o4?e=JcRLvg"
 )
 ROOT = Path(__file__).resolve().parents[1]
 DATA_FILE = ROOT / "data" / "sales.json"
