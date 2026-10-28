@@ -33,19 +33,29 @@ def main() -> None:
     request = Request(
         download_url(SHARE_URL),
         headers={
-            "User-Agent": "Mozilla/5.0 TropicaDashboard/1.0",
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/131.0.0.0 Safari/537.36"
+            ),
             "Accept": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,*/*",
+            "Accept-Language": "en-US,en;q=0.9",
+            "Referer": SHARE_URL,
         },
     )
     with urlopen(request, timeout=45) as response:
         workbook_bytes = response.read()
+        response_type = response.headers.get("Content-Type", "unknown")
+        final_url = response.geturl()
 
     # XLSX files are ZIP containers. Fail clearly if SharePoint returned an HTML page.
     if not workbook_bytes.startswith(b"PK"):
         preview = workbook_bytes[:160].decode("utf-8", errors="replace").replace("\n", " ")
         raise RuntimeError(
             "SharePoint did not return an .xlsx download. Check that the link is set to "
-            f"Anyone with the link can view and download. Response preview: {preview}"
+            "Anyone with the link can view and download. "
+            f"Final URL: {final_url}; content type: {response_type}. "
+            f"Response preview: {preview}"
         )
 
     workbook = load_workbook(BytesIO(workbook_bytes), data_only=True, read_only=True)
